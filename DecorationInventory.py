@@ -75,7 +75,7 @@ def display_inventory():
 
 # Sidebar for adding, updating, and removing items
 st.sidebar.header("Inventory Management")
-action = st.sidebar.radio("Choose action", ["View Item", "Update Item (Taking)", "Update Item (Returning)", "Display Inventory", "Inventory Excel","Admin"])
+action = st.sidebar.radio("Choose action", ["View Item", "Update Item (Taking)", "Update Item (Returning)", "Display Inventory", "Inventory Excel", "Admin"])
 
 # if action == "Add Item":
 #     def check_password():
