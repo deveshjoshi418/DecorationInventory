@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import hmac
 
+st.set_page_config(layout="wide")
+
 col1, col2, col3 = st.columns([1, 0.2, 1])
 # Initialize session state for inventory storage
 if 'inventory' not in st.session_state:
