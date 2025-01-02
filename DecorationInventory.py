@@ -5,6 +5,7 @@ import hmac
 st.set_page_config(layout="wide")
 
 col1, col2, col3 = st.columns([1, 0.2, 1])
+
 # Initialize session state for inventory storage
 if 'inventory' not in st.session_state:
     st.session_state.inventory = pd.DataFrame(columns=['Item', 'Quantity', 'Size (ft)', 'Original Quantity'])
@@ -74,7 +75,7 @@ def display_inventory():
 
 # Sidebar for adding, updating, and removing items
 st.sidebar.header("Inventory Management")
-action = st.sidebar.radio("Choose action", ["View Item", "Update Item (Taking)", "Update Item (Returning)", "Display Inventory", "Admin"])
+action = st.sidebar.radio("Choose action", ["View Item", "Update Item (Taking)", "Update Item (Returning)", "Display Inventory", "Inventory Excel","Admin"])
 
 # if action == "Add Item":
 #     def check_password():
@@ -140,6 +141,11 @@ if action == "Update Item (Taking)":
 
     with col3:
         display_inventory()
+
+elif action == "Inventory Excel":
+    with col1:
+        st.subheader("Inventory Excel")
+        st.link_button(label="Excel", url="https://1drv.ms/x/c/2f5d6a56f202642b/EQJ58CO4rZpBvep8a6Ru86oBGDugB_c1yW8rz48weAJtrA?e=km9iVn")
 
 # elif action == "Add Item Picture":
 #     def check_password():
